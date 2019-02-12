@@ -4,7 +4,7 @@
 
 PyBoard emulator
 
-.. note:: very early development state
+.. note:: early development state
 
 Features
 ========
@@ -15,21 +15,35 @@ Features
 
 Usage
 =======
-Include the following import structure:
+Include the following import command to avoid the need of a pyboard:
+
+    import <path-to-file>.pybolator.pyboard as pyb
+
+One can actually have a simple API to interface the pyboard commands.
+In such case it is suggested to use the following import command:
 
 
-
-```python
     try:
         import pyb
-    except ModuleNotFoundError:
-        import tests.emulators.pybolator.pyboard as pyb
+    except:
+        import <path-to-file>.pybolator.pyboard as pyb
         print("Run pyb as mock.")
-```
+
+This will import pyb (when on a pyboard) and mock it everywhere else.
+
+
+
+Scope
+=======
+I wanted test my micropython scripts for a pyboard without the actual
+hardware. Although there is a similar project that actually emulates a
+pyboard (https://github.com/alej0varas/pybolator), it was outside the
+scope of my testint (at that moment).
 
 
 Supported methods and classes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===================================
+
 
 Time related functions
 ++++++++++++++++++++++

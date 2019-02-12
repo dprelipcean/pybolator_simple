@@ -14,6 +14,13 @@ Description:
 
 Usage inside scripts:
     import <path_to_package>.pybolator.pyboard as pyb
+
+
+ToDo:
+    * Finish pin configuration file.
+    * Include a verification layer for all initializations and commands
+        for foolproofing.
+
 """
 
 # ======================================================================
